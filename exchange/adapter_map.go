@@ -27,7 +27,7 @@ import (
 	"github.com/prebid/prebid-server/adapters/ix"
 	"github.com/prebid/prebid-server/adapters/lifestreet"
 
-	//  "github.com/prebid/prebid-server/adapters/martinai"
+	// "github.com/prebid/prebid-server/adapters/martinai"
 	"github.com/prebid/prebid-server/adapters/mgid"
 	"github.com/prebid/prebid-server/adapters/openx"
 	"github.com/prebid/prebid-server/adapters/pubmatic"
