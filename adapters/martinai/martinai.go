@@ -18,7 +18,40 @@ type MartinaiAdapter struct {
 func (a *MartinaiAdapter) MakeRequests(request *openrtb.BidRequest, reqInfo *adapters.ExtraRequestInfo) ([]*adapters.RequestData, []error) {
 	var errs []error
 	var adapterRequests []*adapters.RequestData
+	// Make a copy as we don't want to change the original request
+	reqCopy := *request
+
+	// Martin only supports single impression per bid request
+	for _, imp := range request.Imp {
+		reqCopy.Imp = []openrtb.Imp{imp}
+		adapterReq, errors := a.makeSingleRequest(&reqCopy)
+		if adapterReq != nil {
+			adapterRequests = append(adapterRequests, adapterReq)
+		}
+		errs = append(errs, errors...)
+	}
+
 	return adapterRequests, errs
+}
+
+func (a *MartinaiAdapter) makeSingleRequest(request *openrtb.BidRequest) (*adapters.RequestData, []error) {
+	var errs []error
+
+	reqJSON, err := json.Marshal(request)
+	if err != nil {
+		errs = append(errs, err)
+		return nil, errs
+	}
+
+	headers := http.Header{}
+	headers.Add("Content-Type", "application/json;charset=utf-8")
+	headers.Add("Accept", "application/json")
+	return &adapters.RequestData{
+		Method:  "POST",
+		Uri:     a.endpoint,
+		Body:    reqJSON,
+		Headers: headers,
+	}, errs
 }
 
 func (a *MartinaiAdapter) MakeBids(internalRequest *openrtb.BidRequest, externalRequest *adapters.RequestData, response *adapters.ResponseData) (*adapters.BidderResponse, []error) {
