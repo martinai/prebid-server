@@ -1,0 +1,11 @@
+maintainer:
+  email: "develop@martin.ai"
+capabilities:
+  app:
+    mediaTypes:
+      - banner
+      - video
+  site:
+    mediaTypes:
+      - banner
+      - video
