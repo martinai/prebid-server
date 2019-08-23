@@ -77,7 +77,8 @@ func (a *MartinaiAdapter) MakeBids(internalRequest *openrtb.BidRequest, external
 		return nil, []error{err}
 	}
 
-	bidResponse := adapters.NewBidderResponseWithBidsCapacity(5)
+	// Our bidder will only ever respond with a single bid
+	bidResponse := adapters.NewBidderResponseWithBidsCapacity(1)
 
 	for _, sb := range bidResp.SeatBid {
 		for i := range sb.Bid {

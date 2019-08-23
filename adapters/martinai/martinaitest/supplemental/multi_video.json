@@ -37,9 +37,15 @@
       }
     },
     "user": {
+      "buyeruid": "test-user-id"
+    },
+    "device": {
       "geo": {
         "lat": 39.99,
-        "lon": -84.51
+        "lon": -84.51,
+        "country": "US",
+        "region": "OH",
+        "zip": "45202"
       }
     }
   },
@@ -71,12 +77,18 @@
               "id": "test-publisher-id"
             }
           },
-          "user": {
-            "geo": {
-              "lat": 39.99,
-              "lon": -84.51
-            }
+         "user": {
+          "buyeruid": "test-user-id"
+        },
+        "device": {
+          "geo": {
+            "lat": 39.99,
+            "lon": -84.51,
+            "country": "US",
+            "region": "OH",
+            "zip": "45202"
           }
+        }
         }
       },
       "mockResponse": {
@@ -131,9 +143,15 @@
             }
           },
           "user": {
+            "buyeruid": "test-user-id"
+          },
+          "device": {
             "geo": {
               "lat": 39.99,
-              "lon": -84.51
+              "lon": -84.51,
+              "country": "US",
+              "region": "OH",
+              "zip": "45202"
             }
           }
         }

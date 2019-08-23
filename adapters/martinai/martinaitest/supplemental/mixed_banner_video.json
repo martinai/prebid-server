@@ -38,9 +38,15 @@
       }
     },
     "user": {
+      "buyeruid": "test-user-id"
+    },
+    "device": {
       "geo": {
         "lat": 39.99,
-        "lon": -84.51
+        "lon": -84.51,
+        "country": "US",
+        "region": "OH",
+        "zip": "45202"
       }
     }
   },
@@ -74,9 +80,15 @@
             }
           },
           "user": {
+            "buyeruid": "test-user-id"
+          },
+          "device": {
             "geo": {
               "lat": 39.99,
-              "lon": -84.51
+              "lon": -84.51,
+              "country": "US",
+              "region": "OH",
+              "zip": "45202"
             }
           }
         }
@@ -133,9 +145,15 @@
             }
           },
           "user": {
+            "buyeruid": "test-user-id"
+          },
+          "device": {
             "geo": {
               "lat": 39.99,
-              "lon": -84.51
+              "lon": -84.51,
+              "country": "US",
+              "region": "OH",
+              "zip": "45202"
             }
           }
         }
