@@ -62,13 +62,13 @@ func (a *MartinaiAdapter) MakeBids(internalRequest *openrtb.BidRequest, external
 
 	if response.StatusCode == http.StatusBadRequest {
 		return nil, []error{&errortypes.BadInput{
-			Message: fmt.Sprintf("Unexpected status code: %d. Run with request.debug = 1 for more info", response.StatusCode),
+			Message: fmt.Sprintf("Unexpected status code: %d.", response.StatusCode),
 		}}
 	}
 
 	if response.StatusCode != http.StatusOK {
 		return nil, []error{&errortypes.BadServerResponse{
-			Message: fmt.Sprintf("Unexpected status code: %d. Run with request.debug = 1 for more info", response.StatusCode),
+			Message: fmt.Sprintf("Unexpected status code: %d.", response.StatusCode),
 		}}
 	}
 

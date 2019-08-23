@@ -1,0 +1,53 @@
+{
+  "mockBidRequest": {
+    "id": "test-request-id",
+    "imp": [
+      {
+        "id": "test-imp-id",
+        "banner": {
+          "format": [
+            {
+              "h": 300,
+              "w": 600
+            }
+          ]
+        },
+        "ext": {
+          "bidder": {}
+        }
+      }
+    ]
+  },
+  
+  "httpCalls": [
+    {
+      "expectedRequest": {
+        "uri": "https://east.martin.ai/bid/prebid",
+        "body": {
+          "id": "test-request-id",
+          "imp": [
+            {
+              "id": "test-imp-id",
+              "banner": {
+                "format": [
+                  {
+                    "h": 300,
+                    "w": 600
+                  }
+                ]
+              },
+              "ext": {
+                "bidder": {}
+              }
+            }
+          ]
+        }
+      },
+      "mockResponse": {
+        "status": 204
+      }
+    }
+  ],
+  "expectedBidResponses": [
+  ]
+}
