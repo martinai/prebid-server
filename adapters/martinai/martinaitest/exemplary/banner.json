@@ -17,7 +17,20 @@
 
         }
       }
-    }]
+    }],
+    "site": {
+      "domain": "google.com",
+      "page": "google.com/test",
+      "publisher": {
+        "id": "test-publisher-id"
+      }
+    },
+    "user": {
+      "geo": {
+        "lat": 39.99,
+        "lon": -84.51
+      }
+    }
   },
 
   "httpCalls": [
@@ -41,7 +54,20 @@
                 "bidder": {}
               }
             }
-          ]
+          ],
+          "site": {
+            "domain": "google.com",
+            "page": "google.com/test",
+            "publisher": {
+              "id": "test-publisher-id"
+            }
+          },
+          "user": {
+            "geo": {
+              "lat": 39.99,
+              "lon": -84.51
+            }
+          }
         }
       },
       "mockResponse": {
